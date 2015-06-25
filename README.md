@@ -3,8 +3,7 @@
 Attempt to use the Google Prediction API to predict amazon product ratings based on product review features.
 
 For this task, I use the amazon review data in json format. The data can be found here:
-
-[Data]("https://www.dropbox.com/sh/wyhhbdv5njc8eqt/AACyGWN9t6KiFnx9o00G5ccoa?dl=0")
+<a href = "https://www.dropbox.com/sh/wyhhbdv5njc8eqt/AACyGWN9t6KiFnx9o00G5ccoa?dl=0">Data</a>
 
 ##Usage:
 `python amazon_predictions.py "bucket/object" "model_id" "project_id"`
