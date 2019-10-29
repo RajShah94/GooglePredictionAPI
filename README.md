@@ -26,6 +26,7 @@ of the predictions (accuracy, confusion matrix).
 The dataset consists of reviews from Amazon. Reviews include product and user information and a 
 plaintext review. There are a million json data objects in the data file. I use 3 approaches to test the 
 accuracy of my models:
+
 ###Approach 1. 
 Split the data file into a training set (99% of the data, i.e, 990000 data points) and a test
 set (1% of the data-10000 data points).
