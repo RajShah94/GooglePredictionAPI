@@ -76,8 +76,3 @@ I prepared a dataset of 100,000 objects split equally among the 5 labelled ratin
 10 fold cross-validation method wherein I split the data into 10 parts of 10,000 each and on each of the 10 
 iterations of modelling the data, one of the parts was chosen to be the test set and the rest was made the 
 training data on which the model was built.
-
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/RajShah94/googlepredictionapi/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
