@@ -34,6 +34,7 @@ Same as approach 1, but here I include an additional feature in the training and
 the categories of the product. To understand the category feature, we need the look at the structure of a
 typical data point:
 
+```
 {
   'itemID': 'I184686836',
   'rating': 2.0,
@@ -45,13 +46,13 @@ typical data point:
   'category': [['Clothing, Shoes & Jewelry', 'Women', 'Watches', 'Wrist Watches']],
   'reviewTime': '09 21, 2012'
 }
-
+```
 Going by the tips given to make the predictions more accurate, I eliminated fields which described the same
-attribute. Hence I removed 'reviewTime' and  'summary' and insted kept 'unixReviewTime' and 'reviewText'
+attribute. Hence I removed `reviewTime` and  `summary` and insted kept `unixReviewTime` and `reviewText`
 respectively.
 
-To avoid complexity, in Approach 1 I avoided having a feature for the categories as there wasnt a straight-forward 
-way of converting the catergories into a form acceptable by the API. The categories is a 2 dimentional array with 
+To avoid complexity, in Approach 1 I avoided having a feature for the categories as there wasn't a straight-forward 
+way of converting the catergories into a form acceptable by the API. The categories is a 2 dimensional array with 
 each sub-array showing a different way to browse the product in Amazon. 
 
 Google Prediction API suggests that we need to include as many features as possible. So in Approach 2, I convert 
@@ -61,11 +62,11 @@ all strings on spaces. Also if we have more then one category then each category
 the API detects and splits the category feature into different categories. To explain this better let us take an 
 example:
 
-'category': [['Clothing, Shoes & Jewelry', 'Women', 'Watches', 'Wrist Watches'],['Wrist Watches']]
+`'category': [['Clothing, Shoes & Jewelry', 'Women', 'Watches', 'Wrist Watches'],['Wrist Watches']]`
 
-So here the hierarchy is 'Clothing, Shoes & Jewelry' -> 'Women' -> 'Watches' -> 'Wrist Watches' and 'Wrist Watches'
+So here the hierarchy is `'Clothing, Shoes & Jewelry' -> 'Women' -> 'Watches' -> 'Wrist Watches'` and `'Wrist Watches'`
 
-We would represent this as: 'Clothing,_Shoes_&_Jewelry-Women-Watches-Wrist_Watches  Wrist_Watches' 
+We would represent this as: `'Clothing,_Shoes_&_Jewelry-Women-Watches-Wrist_Watches  Wrist_Watches'`
 
 ###Approach 3: 
 What Approach 1 and Appraoch 2 lacked was a reasoned way to split the data into training and test sets.
