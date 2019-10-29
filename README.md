@@ -5,32 +5,32 @@ Attempt to use the Google Prediction API to predict amazon product ratings based
 For this task, I use the amazon review data in json format. The data can be found here:
 <a href = "https://www.dropbox.com/sh/wyhhbdv5njc8eqt/AACyGWN9t6KiFnx9o00G5ccoa?dl=0">Data</a>
 
-##Usage:
+## Usage:
 `python amazon_predictions.py "bucket/object" "model_id" "project_id"`
 
-##Architecture of the script files:
+## Architecture of the script files:
 
-###amazon_predictions.py
+### amazon_predictions.py
 Script to train model on input data and write results to the prediction file. The prediction file has actual
 rating alongside the predicted rating.
 
-###PredAPI.ipnb
+### PredAPI.ipnb
 Script to clean and prepare the data to a format suitable for the prediction API. It also shows the results
 of the predictions (accuracy, confusion matrix).
  
-###PredAPI10kfold.ipnb
+### PredAPI10kfold.ipnb
 Script to clean and prepare the data to a format suitable for the prediction API. It also shows the results
 of the predictions (accuracy, confusion matrix). 
 
-##Modelling Approach and Data description:
+## Modelling Approach and Data description:
 The dataset consists of reviews from Amazon. Reviews include product and user information and a 
 plaintext review. There are a million json data objects in the data file. I use 3 approaches to test the 
 accuracy of my models:
 
-###Approach 1. 
+### Approach 1. 
 Split the data file into a training set (99% of the data, i.e, 990000 data points) and a test
 set (1% of the data-10000 data points).
-###Approach 2. 
+### Approach 2. 
 Same as approach 1, but here I include an additional feature in the training and the test set - 
 the categories of the product. To understand the category feature, we need the look at the structure of a
 typical data point:
@@ -69,7 +69,7 @@ So here the hierarchy is `'Clothing, Shoes & Jewelry' -> 'Women' -> 'Watches' ->
 
 We would represent this as: `'Clothing,_Shoes_&_Jewelry-Women-Watches-Wrist_Watches  Wrist_Watches'`
 
-###Approach 3: 
+### Approach 3: 
 What Approach 1 and Appraoch 2 lacked was a reasoned way to split the data into training and test sets.
 Also, the distribution of the original data is non uniform in the number of data points for each labelled 
 ratings. Therefore, in this approach, I use the 10 fold cross validation method. From a million data points,
