@@ -40,10 +40,6 @@ To get detailed log output run:
 
 from __future__ import print_function
 
-__author__ = ('jcgregorio@google.com (Joe Gregorio), '
-              'marccohen@google.com (Marc Cohen)')
-
-
 import argparse
 import os
 import pprint
